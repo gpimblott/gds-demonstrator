@@ -2,7 +2,7 @@
 
 require('dotenv').config({ path: 'process.env' });
 
-const debug = require('debug')('example:server');
+const debug = require('debug')('demo:server');
 const http = require('http');
 
 const express = require('express');
@@ -15,7 +15,6 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 
 const session = require('express-session');
 const express_enforces_ssl = require('express-enforces-ssl');
@@ -28,7 +27,7 @@ const helmet = require('helmet');
 /**
  * Example application
  **/
-const ExampleApp = function () {
+const DemoApp = function () {
     const self = this;
 
     /**
@@ -139,12 +138,11 @@ const ExampleApp = function () {
         self.app.set('layoutsDir', path.join(__dirname, 'views/layouts'));
         self.app.set('partialsDir', path.join(__dirname, 'views/partials'));
         self.app.set('views', path.join(__dirname, 'views'));
-        self.app.use(express.static(path.join(__dirname, 'public')));
 
-        self.app.use(bodyParser.json());
-        self.app.use(bodyParser.urlencoded({
-            extended: false
-        }));
+        self.app.use(express.static(path.join(__dirname, 'public')));
+        self.app.use(favicon(path.join(__dirname, 'public', '/images/favicon.ico')));
+
+
         self.app.use(cookieParser());
 
         // development error handler
@@ -192,6 +190,6 @@ const ExampleApp = function () {
 /**
  *  main():  Main code.
  */
-var exampleNodeApp = new ExampleApp();
-exampleNodeApp.initialize();
-exampleNodeApp.start();
+var demoApp = new DemoApp();
+demoApp.initialize();
+demoApp.start();

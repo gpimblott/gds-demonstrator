@@ -1,6 +1,0 @@
-{
-  "extends": ["node"],
-  "rules": {
-    // Additional, per-project rules...
-  }
-}
