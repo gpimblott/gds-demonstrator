@@ -80,6 +80,7 @@ payments.checkPaymentStatus = function (payment_id, callback) {
         });
 
         res.on("end", function () {
+            var body = Buffer.concat(chunks);
             callback(JSON.parse(body.toString()));
         });
     });
