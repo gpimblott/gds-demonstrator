@@ -28,6 +28,16 @@ router.get('/pay', (req, res, next) => {
     res.render("pay", { layout: 'main' });
 });
 
+router.get('/pay/transaction/:id', (req, res, next) => {
+    const id = req.params[ "id" ];
+
+    payments.checkPaymentStatus( id , (result)=>{
+        res.render("transaction", {
+            transaction: result,
+            layout: 'main' });
+    });
+});
+
 router.post('/pay', urlencodedParser, (req, res, next) => {
 
     if (!req.body) return res.sendStatus(400)
