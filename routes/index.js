@@ -32,6 +32,8 @@ router.get('/pay/transaction/:id', (req, res, next) => {
     const id = req.params[ "id" ];
 
     payments.checkPaymentStatus( id , (result)=>{
+        debug(result);
+        
         res.render("transaction", {
             transaction: result,
             layout: 'main' });

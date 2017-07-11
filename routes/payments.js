@@ -58,6 +58,7 @@ payments.sendRequstForPayment = function (amount, reference, description, callba
  */
 payments.checkPaymentStatus = function (id, callback) {
 
+    debug("Checking transaction: %s" , id)
     const options = {
         "method": "GET",
         "hostname": "publicapi.payments.service.gov.uk",
@@ -82,6 +83,4 @@ payments.checkPaymentStatus = function (id, callback) {
             callback(JSON.parse(body.toString()));
         });
     });
-
-    req.end();
 }
