@@ -80,8 +80,11 @@ payments.checkPaymentStatus = function (payment_id, callback) {
         });
 
         res.on("end", function () {
+            debug("2. Response received from GOV.UK Pay");
             var body = Buffer.concat(chunks);
             callback(JSON.parse(body.toString()));
         });
     });
+    
+    req.end();
 }
