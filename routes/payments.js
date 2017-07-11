@@ -56,14 +56,14 @@ payments.sendRequstForPayment = function (amount, reference, description, callba
  * @param id Transaction ID
  * @param callback
  */
-payments.checkPaymentStatus = function (id, callback) {
+payments.checkPaymentStatus = function (payment_id, callback) {
 
-    debug("Checking transaction: %s" , id)
+    debug("Checking transaction: %s" , payment_id)
     const options = {
         "method": "GET",
         "hostname": "publicapi.payments.service.gov.uk",
         "port": null,
-        "path": "/v1/payments/" + id,
+        "path": "/v1/payments/" + payment_id,
         "headers": {
             "content-type": "application/json",
             "authorization": "Bearer " + api_key,

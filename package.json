@@ -24,6 +24,7 @@
     "express-enforces-ssl": "^1.1.0",
     "express-session": "latest",
     "express-handlebars": "latest",
+    "hashmap": "latest",
     "helmet": "latest",
     "morgan": "~1.7.0",
     "multer": "latest",
