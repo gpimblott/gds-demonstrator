@@ -50,8 +50,10 @@
                 </table>
                 {{/with}}
             </div>
-            {{{link "Go back to the start" "/"}}}
-            {{{link "Refund transaction" refunds.href}}}
+
+            <a href="{{refunds.href}}">Refund transaction</a> |
+            <a href="/">Go back to the start</a>
+
         </div>
         <div class="col-md-4 col-md-offset-1">
             <div class="row">

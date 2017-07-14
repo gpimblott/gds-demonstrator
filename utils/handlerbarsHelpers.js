@@ -57,3 +57,4 @@ Handlebars.registerHelper("truncate", function (str, len) {
     return str;
 });
 
+
