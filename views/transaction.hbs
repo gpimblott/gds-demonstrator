@@ -15,10 +15,13 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Status</td><td>{{state.status}} - finished = {{state.finished}}</td>
+                        <td>Status</td><td>{{state.status}}</td>
                     </tr>
                     <tr>
-                        <td>Amount</td><td>{{amount}}</td>
+                        <td>Finished</td><td>{{state.finished}}</td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td><td>{{amount}}p</td>
                     </tr>
                     <tr>
                         <td>Description</td><td>{{description}}</td>
@@ -32,6 +35,17 @@
                     <tr>
                         <td>Payment id</td><td>{{payment_id}}</td>
                     </tr>
+                    {{#with refund_summary}}
+                    <tr>
+                        <td>Refund status</td><td>{{status}}</td>
+                    </tr>
+                    <tr>
+                        <td>Refund available</td><td>{{amount_available}}</td>
+                    </tr>
+                    <tr>
+                        <td>Refund submitted</td><td>{{amount_submitted}}</td>
+                    </tr>
+                    {{/with}}
                     </tbody>
                 </table>
                 {{/with}}
