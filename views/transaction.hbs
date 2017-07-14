@@ -1,1 +1,79 @@
-{{transaction}}
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-15 col-md-offset-1">
+            <div class="row">
+                <p>Details of the transaction</p>
+            </div>
+            <div class="row">
+                {{#with transaction}}
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th><th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Status</td><td>{{state.status}} - finished = {{state.finished}}</td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td><td>{{amount}}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td><td>{{description}}</td>
+                    </tr>
+                    <tr>
+                        <td>Reference</td><td>{{reference}}</td>
+                    </tr>
+                    <tr>
+                        <td>email</td><td>{{email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Payment id</td><td>{{payment_id}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                {{/with}}
+            </div>
+        </div>
+        <div class="col-md-15 col-md-offset-1">
+            <div class="row">
+                <p>Card holder details</p>
+            </div>
+            <div class="row">
+                {{#with transaction.card_details}}
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th></th><th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Last Digits</td><td>{{last_digits_card_number}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cardholder name</td><td>{{cardholder_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Expiry date</td><td>{{expiry_date}}</td>
+                        </tr>
+                        <tr>
+                            {{#with billing_address}}
+                            <td>Billing adddress</td><td>{{line1}} {{line2}} {{postcode}} {{city}} {{country}}</td>
+                            {{/with}}
+                        </tr>
+                        <tr>
+                            <td>Card brand</td><td>{{card_brand}}</td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+</div>

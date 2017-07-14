@@ -42,10 +42,10 @@ router.get('/pay/transaction/:reference', (req, res, next) => {
     debug("Lookup id %s=%s", reference , id);
 
     payments.checkPaymentStatus( id , (result)=>{
-        debug(result);
+        debug(JSON.stringify(result));
 
         res.render("transaction", {
-            transaction: JSON.stringify(result),
+            transaction: result,
             layout: 'main' });
     });
 });
