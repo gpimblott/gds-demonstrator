@@ -85,6 +85,6 @@ payments.checkPaymentStatus = function (payment_id, callback) {
             callback(JSON.parse(body.toString()));
         });
     });
-    
+
     req.end();
 }

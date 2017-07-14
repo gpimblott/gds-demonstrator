@@ -45,7 +45,7 @@ router.get('/pay/transaction/:reference', (req, res, next) => {
         debug(result);
 
         res.render("transaction", {
-            transaction: result,
+            transaction: result.toString(),
             layout: 'main' });
     });
 });
